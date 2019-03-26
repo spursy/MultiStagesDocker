@@ -1,0 +1,34 @@
+### Traditional Docker Build
+
+- docker build original code
+
+```
+docker build --no-cache -t spursyy/href-counter:build . -f Dockerfile.build
+```
+
+- extract go build target and docker build it into new images
+
+```
+chmod +x ./build.sh
+
+./build.sh
+```
+
+- check result
+
+```
+docker run -e url=https://www.cnblogs.com/ spursyy/href-counter:build
+```
+
+- check image size
+
+
+
+### Traditional Docker Build From Alpine
+
+- check images size
+
+
+### MultiStages Docker Build
+
+

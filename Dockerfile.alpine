@@ -1,0 +1,5 @@
+FROM golang:1.9-alpine
+WORKDIR /go/src/github.com/spursyy/href-counter/
+RUN apk --no-cache add git && go get -d -v golang.org/x/net/html
+COPY app.go .
+RUN CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo -o app .
